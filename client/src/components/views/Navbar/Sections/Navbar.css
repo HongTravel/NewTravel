@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.css';
+
+.menu {
+    padding: 0 20px;
+    border-bottom: solid 1px #e8e8e8;
+    overflow: auto;
+    box-shadow: 0 0 30px #f3f1f1;
+    background-color: white;
+}
+
+.menu_logo {
+    width: 200px;
+    float: left;
+}
+
+.menu_logo a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 19px 20px;
+}
+
+.menu_container .ant-menu-item{
+    padding: 0px 5px;
+}
+.menu_container .ant-menu-submenu-title{
+    padding: 10px 20px;
+}
+
+.menu_container .ant-menu-item a,
+.menu_container .ant-menu-submenu-title a {
+    padding: 10px 15px;
+}
+
+.menu_conatiner .ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.menu_container .menu_left{
+    float: left;
+    width: 10%;
+    padding: 9px 10px;
+}
+
+
+.menu_container .menu_right{
+    float: right;
+    width: 20%;
+    padding: 19px 60px;
+}
+

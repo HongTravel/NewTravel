@@ -41,30 +41,21 @@ const Maping = () => {
     )
 }
 
+function movetoSeoul(){
+    window.location.href = "/seoul";
+}
+
+function movetoIncheon(){
+    window.location.href = "/incheon";
+}
+
 function LandingPage(){
-
-    const [timer, setTimer] = useState("00:00:00");
-
-    const currentTimer = () => {
-        const date = new Date();
-        const hours = String(date.getHours()).padStart(2,"0");
-        const minutes = String(date.getMinutes()).padStart(2,"0");
-        const seconds = String(date.getSeconds()).padStart(2,"0");
-        setTimer(`${hours}:${minutes}:${seconds}`)
-    }
-
-    const startTimer = () => {
-        setInterval(currentTimer, 1000)
-    }
-
-    startTimer()
 
     return(
         <div>
             <table>
                 <tr>
                     <td> <Maping /> </td>
-                    <td><h5 style={{fontFamily: "Pacifico", fontSize:"24px"}}>현재시간 : {timer} </h5></td>
                 </tr>
             </table>
             <br/>
@@ -72,9 +63,9 @@ function LandingPage(){
             <table>
             <thead><h3>지역으로 이동하기 &gt;</h3></thead>
             <tr>
-                    <td><img style={{width:"150px" , height:"150px"}} alt="서울" src={Seoul}/></td>
+                    <td><img style={{width:"150px" , height:"150px"}} alt="서울" src={Seoul} onClick={movetoSeoul}/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="경기" src={Gyeonggi}/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="인천" src={Incheon}/></td>
+                    <td><img style={{width:"150px", height:"150px"}} alt="인천" src={Incheon} onClick={movetoIncheon}/></td>
                     <td><img style={{width:"130px", height:"130px"}} alt="강원" src={Gangwon}/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="충청" src={ChoongChung}/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="대전"/></td>
