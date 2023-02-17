@@ -5,7 +5,6 @@ function LeftMenu(){
     return(
         <Menu>
         <Menu.Item>
-            <a href="/login">Login</a>
             <a href="/register">Register</a>
         </Menu.Item>
         </Menu>
