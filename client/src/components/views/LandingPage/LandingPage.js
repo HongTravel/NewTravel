@@ -20,9 +20,7 @@ const Maping = () => {
     },[])
 
     return(
-        <div
-           
-        >
+        <div>
            <div id ="map" style={{width: "1500px", height:"700px"}}></div> 
         </div>
     )

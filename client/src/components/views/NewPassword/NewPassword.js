@@ -7,10 +7,34 @@ function moveToLogin(){
     window.location.href = "/login";
 }
 
+const formItemLayout ={
+    labelCol :{
+        xs: {span: 24 },
+        sm: {span: 8},
+    },
+    wrapperCol:{
+        xs: {span: 24},
+        sm: {span:16},
+    },
+};
+
+const tailFormItemLayout ={
+    wrapperCol: {
+        xs:{
+            span: 24,
+            offset: 0,
+        },
+        sm: {
+            span: 16,
+            offset: 8,
+        },
+    },
+};
+
 function NewPassword(){
     return(
         <div>
-            <div><h3>Change Password</h3></div>
+            <div style={{marginLeft:"650px"}}><h3>Change Password</h3></div>
         <Formik initialValues={{
             email: "",
             password: "",
@@ -24,17 +48,20 @@ function NewPassword(){
         })}
 
         >
-        <Form>
+        <Form style={{minWidth:"375px"}} {...formItemLayout}>
             <Form.Item required label="아이디(이메일)">
-                <Input id = "email" type="email" placeholder = "Enter your Email" />
+                <Input style={{width:"500px"}}id = "email" type="email" placeholder = "Enter your Email" />
             </Form.Item>
             <Form.Item required label = "새로운 비밀번호">
-                <Input id = "password" type="password" placeholder = "Enter your New Password" />
+                <Input style={{width:"500px"}}id = "password" type="password" placeholder = "Enter your New Password" />
             </Form.Item>
             <Form.Item required label = "비밀번호 확인">
-                <Input id = "password" type="password" placeholder = "Confirm your Password" />
+                <Input style={{width: "500px"}} id = "password" type="password" placeholder = "Confirm your Password" />
             </Form.Item>
+            <Form.Item {...tailFormItemLayout}>
             <Button type="primary" onClick={moveToLogin}>변경완료</Button>
+            </Form.Item>
+            
         </Form>
         </Formik>
         </div>
