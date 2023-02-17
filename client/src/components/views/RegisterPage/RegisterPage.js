@@ -7,10 +7,34 @@ function moveToLogin(){
     window.location.href="/login";
 }
 
+const formItemLayout ={
+    labelCol: {
+        xs: {span: 24},
+        sm: {span: 8},
+    },
+    wrapperCol: {
+        xs:{span: 24},
+        sm:{span: 16},
+    },
+};
+
+const tailFormItemLayout={
+    wrapperCol:{
+        xs:{
+            span:24,
+            offset: 0,
+        },
+        sm:{
+            span:16,
+            offset: 8,
+        },
+    },
+};
+
 function RegisterPage(){
     return(
         <div>
-        <div><h3>Sign up</h3></div>
+        <div style={{marginLeft:"650px"}}><h3>Sign up</h3></div>
 
         <Formik initialValues={{
             name: "",
@@ -25,21 +49,25 @@ function RegisterPage(){
             password: Yup.string().min(6, "Password must be at least 6 letters").required("Password is required"),
             confirmpassword: Yup.string().oneOf([Yup.ref("password"), null], "Password must be match").required("ConfirmPassword is required"),
         }) }>
-
-        <Form>
+        
+        <Form style={{minWidth: "30px"}}
+        {...formItemLayout}>
             <Form.Item required label = "이름">
-                <Input id = "name" type="text" placeholder ="Enter your name" />
+                <Input style={{width:"500px"}}id = "name" type="text" placeholder ="Enter your name" />
             </Form.Item>
             <Form.Item required label = "이메일">
-                <Input id = "email" type="email" placeholder ="Enter your email as used for your id" />
+                <Input style={{width:"500px"}} id = "email" type="email" placeholder ="Enter your email as used for your id" />
             </Form.Item>
             <Form.Item required label = "비밀번호">
-                <Input id = "password" type="password" placeholder = "Enter your password" />
+                <Input style={{width:"500px"}}id = "password" type="password" placeholder = "Enter your password" />
             </Form.Item>
             <Form.Item required label = "비밀번호 확인">
-                <Input id = "Confirm" type = "password" placeholder = "Confirm your password" />
+                <Input style={{width:"500px"}}id = "Confirm" type = "password" placeholder = "Confirm your password" />
             </Form.Item>
+            <Form.Item {...tailFormItemLayout}>
             <Button type="primary" onClick={moveToLogin}>Submit</Button>
+            </Form.Item>
+            
         </Form>
        
         </Formik>
