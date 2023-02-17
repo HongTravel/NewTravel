@@ -30,8 +30,7 @@ function RightMenu(){
 
     return(
         <div>
-            <h5 style={{fontFamily: "Pacifico", fontSize:"16px"}}>{todayTime()} &nbsp;</h5>
-            <h5 style={{fontFamily: "Pacifico", fontSize:"16px"}}>현재시간 : {timer} </h5>
+            <h5 style={{fontFamily: "Pacifico", fontSize:"14px"}}>{todayTime()} &nbsp; 현재시간: {timer}</h5>
         </div>
            
     )
