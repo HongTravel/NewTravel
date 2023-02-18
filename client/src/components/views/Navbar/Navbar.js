@@ -36,7 +36,7 @@ function Navbar(){
 
 
     return(
-        <nav className="menu" style={{position: 'absolute', zIndex: 6, width: '100%'}}>
+        <nav className="menu" style={{position: 'absolute', zIndex: 5, width: '100%'}}>
            <div className="menu_logo">
            <a href ="/"><InfoCircleOutlined  /> &nbsp; HongTravel</a>
            </div>
