@@ -4,7 +4,7 @@ import Gyeonggi from "../Image/gyeonggi_logo.png";
 import Incheon from "../Image/incheon_logo.jpg";
 import Gangwon from "../Image/Gangwon_logo.png";
 import KakaoMapApi from "./Sections/KakaoMapApi";
-
+import './Sections/LandingPage.css';
 
 function movetoSeoul(){
     window.location.href = "/seoul";

@@ -1,0 +1,21 @@
+#pagination {
+    margin-top: 2rem;
+}
+
+#pagination a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 250px;
+}
+
+#pagination a.on{
+    color: pink;
+    font-weight: bold;
+}
+
+#result-list{
+    width: 100%;
+    overflow: auto;
+    
+}
