@@ -3,42 +3,8 @@ import Seoul from "../Image/seoul_logo.png";
 import Gyeonggi from "../Image/gyeonggi_logo.png";
 import Incheon from "../Image/incheon_logo.jpg";
 import Gangwon from "../Image/Gangwon_logo.png";
-const {kakao} = window;
+import KakaoMapApi from "./Sections/KakaoMapApi";
 
-const Maping = () => {
-    
-
-    useEffect(() => {
-        const container = document.getElementById('map');
-        const options = {center: new kakao.maps.LatLng(37.552635722509,126.92436042413)
-        ,
-        level: 3};
-        const kakaoMap = new kakao.maps.Map(container, options);
-        
-        const markerPosition = new kakao.maps.LatLng(37.552635722509,126.92436042413);
-        const marker = new kakao.maps.Marker({
-            position: markerPosition
-        });
-        marker.setMap(kakaoMap);
-
-        var iwContent = '<div style="padding: 5px;">안녕하세요!</div>'
-        var iwPosition = new kakao.maps.LatLng(37.552635722509,126.92436042413);
-
-        var infowindow = new kakao.maps.InfoWindow({
-            position: iwPosition,
-            content: iwContent,
-        });
-
-        infowindow.open(kakaoMap,marker);
-
-    },[])
-
-    return(
-        <div>
-           <div id ="map" style={{width: "1000px", height:"400px"}}></div> 
-        </div>
-    )
-}
 
 function movetoSeoul(){
     window.location.href = "/seoul";
@@ -49,12 +15,35 @@ function movetoIncheon(){
 }
 
 function LandingPage(){
+    const [Inputtext, setInputText] = useState('');
+    const [Place, setPlace] = useState('');
+
+    const onChange = (e) => {
+        setInputText(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setPlace(Inputtext);
+        setInputText('');
+    }
 
     return(
         <div>
+            <div>
+            <label>
+                 <h3>장소검색:</h3>&nbsp;
+                </label>
+                <form className ="inputForm" onSubmit={handleSubmit}>
+                <input style={{width:"300px"}} onChange={onChange} value={Inputtext} placeholder="검색어를 입력하세요"/>
+                <button type="submit">검색</button>
+                </form>
+                
+            </div>
+            <br />
             <table>
                 <tr>
-                    <td> <Maping /> </td>
+                    <td><KakaoMapApi searchPlace={Place}/></td>
                     <td>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/xRbPAVnqtcs?loop=1&playlist=xRbPAVnqtcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </td>
