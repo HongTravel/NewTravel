@@ -12,9 +12,9 @@ function Seoul(){
     }
 
   return(
-        <div>
+        <div style={{marginLeft:"300px"}}>
           <div>
-            <h3>서울특별시</h3>
+            <h2><b>서울특별시</b></h2>
           </div>
           <div>
              <label>주소 &nbsp;</label><input type="text" onChange={InputText} value={text} placeholder="지역구를 입력하세요" />

@@ -3,7 +3,6 @@ import Seoul from "../Image/seoul_logo.png";
 import Gyeonggi from "../Image/gyeonggi_logo.png";
 import Incheon from "../Image/incheon_logo.jpg";
 import Gangwon from "../Image/Gangwon_logo.png";
-import ChoongChung from "../Image/ChoongChung_logo.png";
 const {kakao} = window;
 
 const Maping = () => {
@@ -70,7 +69,7 @@ function LandingPage(){
                     <td><img style={{width:"150px", height:"150px"}} alt="경기" src={Gyeonggi}/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="인천" src={Incheon} onClick={movetoIncheon}/></td>
                     <td><img style={{width:"130px", height:"130px"}} alt="강원" src={Gangwon}/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="충청" src={ChoongChung}/></td>
+                    <td><img style={{width:"150px", height:"150px"}} alt="충청" /></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="대전"/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="전라"/></td>
                     <td><img style={{width:"150px", height:"150px"}} alt="광주"/></td>
