@@ -1,10 +1,17 @@
 import React,{useEffect, useState} from "react";
+import {Form, Input, Button} from "antd";
 import Seoul from "../Image/seoul_logo.png";
 import Gyeonggi from "../Image/gyeonggi_logo.png";
 import Incheon from "../Image/incheon_logo.jpg";
 import Gangwon from "../Image/Gangwon_logo.png";
 import KakaoMapApi from "./Sections/KakaoMapApi";
 import './Sections/LandingPage.css';
+import SliderItem from "./Sections/SliderItem";
+import SwiperContainer from "./Sections/SwiperContainer";
+
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import styled from "styled-components";
 
 function movetoSeoul(){
     window.location.href = "/seoul";
@@ -12,6 +19,50 @@ function movetoSeoul(){
 
 function movetoIncheon(){
     window.location.href = "/incheon";
+}
+
+function movetoDaejeon(){
+    window.location.href = "/daejeon";
+}
+
+function movetoGwangju(){
+    window.location.href = "/gwangju";
+}
+
+function movetoDaegu(){
+    window.location.href = "/daegu";
+}
+
+function movetoUlsan(){
+    window.location.href = "/ulsan";
+}
+
+function movetoBusan(){
+    window.location.href = "/busan";
+}
+
+function movetoJeju(){
+    window.location.href = "/jeju";
+}
+
+function movetoGyeonggi(){
+    window.location.href = "/gyeonggi";
+}
+
+function movetoGangwon(){
+    window.location.href = "/gangwon";
+}
+
+function movetoChoongChung(){
+    window.location.href = "/choongchung";
+}
+
+function movetoJeonRa(){
+    window.location.href = "/jeonra";
+}
+
+function movetoGyeongSang(){
+    window.location.href = "/gyeongsang";
 }
 
 function LandingPage(){
@@ -28,16 +79,41 @@ function LandingPage(){
         setInputText('');
     }
 
+    const StyledSwiperContainer = styled.div`
+    /*width: 100%;
+    height: 100%;*/ 
+    background: linear-gradient(
+      270deg,
+      rgba(247, 249, 255, 1) 0%,
+      rgba(242, 246, 255, 1) 100%
+    );
+    position: relative;
+    max-width: 420px;
+    max-height: 520px;
+    border-radius: 10px;
+  `;
+  const StyledSwiper = styled(Swiper)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+`;
     return(
         <div>
+
             <div className="init">
-            <label>
-                 <h3>장소검색:</h3>&nbsp;
-                </label>
+                    
                 <form className ="inputForm" onSubmit={handleSubmit}>
-                <input style={{width:"300px"}} onChange={onChange} value={Inputtext} placeholder="검색어를 입력하세요"/>
-                <button type="submit">검색</button>
+                    <table>
+                        <td><h3>장소검색: &nbsp;</h3></td>
+                        <td><input style={{width:"300px"}} onChange={onChange} value={Inputtext} placeholder="검색어를 입력하세요"/>
+                <button type="submit">검색</button></td>
+                    </table>
+                
                 </form>
+            
                 
             </div>
             <br />
@@ -51,25 +127,36 @@ function LandingPage(){
             </table>
             <br/>
             <br/>
-            <table>
-            <thead><h3>지역으로 이동하기 &gt;</h3></thead>
-            <tr>
-                    <td><img style={{width:"150px" , height:"150px"}} alt="서울" src={Seoul} onClick={movetoSeoul}/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="경기" src={Gyeonggi}/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="인천" src={Incheon} onClick={movetoIncheon}/></td>
-                    <td><img style={{width:"130px", height:"130px"}} alt="강원" src={Gangwon}/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="충청" /></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="대전"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="전라"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="광주"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="경상"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="대구"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="울산"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="부산"/></td>
-                    <td><img style={{width:"150px", height:"150px"}} alt="제주"/></td>
-            </tr>
-            </table>
-           
+            <div>
+            <h3>드래그 하여 지역으로 이동하기</h3>
+            <StyledSwiperContainer>
+                <StyledSwiper>
+                <SwiperSlide>Seoul &nbsp; <Button onClick={movetoSeoul}>이동</Button></SwiperSlide>
+                <SwiperSlide>Incheon &nbsp; <Button onClick={movetoIncheon}>이동</Button></SwiperSlide>
+                <SwiperSlide>Gyeonggi &nbsp; <Button onClick={movetoGyeonggi}>이동</Button></SwiperSlide>
+                <SwiperSlide>Gangwon &nbsp; <Button onClick={movetoGangwon}>이동</Button></SwiperSlide> 
+                <SwiperSlide>ChoongChung &nbsp; <Button onClick={movetoChoongChung}>이동</Button></SwiperSlide>
+                <SwiperSlide>Daejeon &nbsp; <Button onClick={movetoDaejeon}>이동</Button></SwiperSlide>
+                <SwiperSlide>JeonRa &nbsp; <Button onClick={movetoJeonRa}>이동</Button></SwiperSlide>
+                <SwiperSlide>Gwangju &nbsp; <Button onClick={movetoGwangju}>이동</Button></SwiperSlide>
+                <SwiperSlide>GyeongSang &nbsp; <Button onClick={movetoGyeongSang}>이동</Button></SwiperSlide>
+                <SwiperSlide>Daegu &nbsp; <Button onClick={movetoDaegu}>이동</Button></SwiperSlide>
+                <SwiperSlide>Ulsan &nbsp; <Button onClick={movetoUlsan}>이동</Button></SwiperSlide>
+                <SwiperSlide>Busan &nbsp; <Button onClick={movetoBusan}>이동</Button></SwiperSlide>
+                <SwiperSlide>Jeju &nbsp; <Button onClick ={movetoJeju}>이동</Button></SwiperSlide>          
+                </StyledSwiper>
+            </StyledSwiperContainer>
+          
+            </div>
+            <br />
+            <br />
+            <br />
+
+            <div>
+                <h4>길을 모르겠을땐?</h4>
+                <a href="/navi">use navigation</a>
+            </div>
+
         </div>
     )
 }

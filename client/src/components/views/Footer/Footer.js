@@ -19,6 +19,7 @@ function Footer(){
                 <a href ="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 </td>
+                <td><a href="/about">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;About our website</a></td>
              </tr>
             </table>
         </div>
