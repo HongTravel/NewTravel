@@ -12,6 +12,8 @@
     "react-kakao-maps-sdk": "^1.1.6",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
+    "swiper": "^9.0.5",
     "web-vitals": "^3.1.1",
     "yup": "^1.0.0"
   },
