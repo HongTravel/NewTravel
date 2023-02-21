@@ -17,16 +17,6 @@
 #result-list{
     width: 100%;
     overflow: auto;
-    background-color: beige;
-    background: -webkit-linear-gradient(to right, beige, white);
+  
 }
 
-.init{
-    background-color: beige;
-    background: -webkit-linear-gradient(to right, beige, white);
-}
-
-body{
-    background-color: beige;
-    background: -webkit-linear-gradient(to right, beige, white);
-}
