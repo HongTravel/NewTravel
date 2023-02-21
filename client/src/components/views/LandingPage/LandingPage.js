@@ -30,7 +30,7 @@ function LandingPage(){
 
     return(
         <div>
-            <div>
+            <div className="init">
             <label>
                  <h3>장소검색:</h3>&nbsp;
                 </label>

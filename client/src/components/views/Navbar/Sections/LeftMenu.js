@@ -3,8 +3,8 @@ import {Menu} from 'antd';
 
 function LeftMenu(){
     return(
-        <Menu>
-        <Menu.Item>
+        <Menu style={{backgroundColor:"beige"}}>
+        <Menu.Item >
             <a href="/register">Register</a>
         </Menu.Item>
         </Menu>
