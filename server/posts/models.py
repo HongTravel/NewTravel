@@ -4,7 +4,7 @@ from django.utils import timezone
 from users.models import Profile
 
 # Create your models here.
-
+# 회춘한 채윤
 class Post(models.Model):
     # LOCALITY1_CHOICES = [
     #     ('서울', '서울'),
