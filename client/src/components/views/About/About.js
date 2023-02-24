@@ -1,5 +1,6 @@
 import React from "react";
 //회춘한 채윤^^
+//뽀글뽀글
 function About(){
     return(
         <div>
