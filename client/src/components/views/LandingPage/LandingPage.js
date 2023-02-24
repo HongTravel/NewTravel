@@ -1,8 +1,8 @@
 import React from 'react';
 import KakaoMapApi from './Section/KakaoMapApi';
 import Card from './Section/Card';
+import sample from '../Image/finding.png';
 
-import sample from '../Image/HongTravel.png';
 function LandingPage(){
     return(
         
@@ -12,9 +12,7 @@ function LandingPage(){
                     <td><KakaoMapApi  /></td>
                     <td>&nbsp; &nbsp; &nbsp;</td>
                     <td>
-                        <Card img = {sample} title="제목" text="내용내용내용" />
-                        <Card img = {sample} title="제목22" text="내용222222" />
-                       
+                        <Card img= {sample} title="검색" text="원하는 카페, 도서관을 검색하세요" />   
                     </td>
                 </tr>
              </table>
