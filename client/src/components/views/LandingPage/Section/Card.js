@@ -11,7 +11,7 @@ box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 cursor: pointer;
 transition: 0.2s;
 
-width: 300px;
+width: 700px;
 height: 300px;
 
 .card-image-wrapper{
@@ -76,10 +76,10 @@ function Card({img = "", title = "", text = ""})
     return(
         <StyledCard className = "card-item">
             <div calssName = "card-image-wrapper">
-                <img className = "card-img" alt = "샘플" />
+                <img className = "card-img" src={img} alt = "샘플" />
             </div>
             <div className = "card-content">
-                <h1 clssName="card-header">{title}</h1>
+                <h1 className="card-header">{title}</h1>
                 <p className="card-text">{text}</p>
             </div>
         </StyledCard>
