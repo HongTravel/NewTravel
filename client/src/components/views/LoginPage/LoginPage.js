@@ -1,75 +1,32 @@
-import React from "react";
-import {Formik} from "formik";
-import * as Yup from "yup";
-import {Form, Input, Button} from "antd";
+import React from 'react';
+import './LoginPage.css';
 
-function movetoRegister(){
-    window.location.href="/register";
+function movetoMain()
+{
+    window.location.href="/";
 }
 
-function movetonew(){
-    window.location.href = "/newpass";
+function movetopassword()
+{
+    window.location.href="/newpass";
 }
 
-function movetoTravel(){
-    window.location.href = "/Travel";
-}
-
-const formItemLayout = {
-    labelCol:{
-        xs: {span : 24},
-        sm: {span: 8},
-    },
-    wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16},
-    },
-};
-
-const tailFormItemLayout={
-    wrapperCol:{
-        xs:{
-            span:24,
-            offset: 0,
-        },
-        sm: {
-            span: 16,
-            offset: 8,
-        },
-    },
-};
-
-function LoginPage(props){
+function LoginPage(){
     return(
-        <div>
-            <div style={{marginLeft:"650px"}}><h3>Login</h3></div>
-            <Formik initialValues={{
-                email: "",
-                password: "",
-            }}
-            validationSchema={Yup.object().shape({
-                email:Yup.string().email("Email is invalid").required("Email is required"),
-                password: Yup.string().min(6,"Password must be at least 6 letters").required("Password is required")
-
-            })}
-            >   
-            <Form style={{minWidth:"375px"}} {...formItemLayout}>
-                <Form.Item required label = "아이디(이메일)">
-                    <Input style={{width:"500px"}} id="email" type="email" placeholder ="Enter your email" />
-                </Form.Item>
-                <Form.Item required label = "비밀번호">
-                    <Input style={{width:"500px"}}id = "password" type="password" placeholder = "Enter your password" />
-                </Form.Item>
-                <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" onClick = {movetoTravel}>Log in</Button>
-                <Button onClick={movetonew}>Forgot password?</Button>
-                <Button onClick={movetoRegister}>Register now!</Button>
-                </Form.Item>
-            </Form>
-
-            </Formik>
+        <div className ="main2">
+            <div className = "login">
+                <form>
+                    <label aria-hidden="true">Login</label>
+                    <input  style={{marginLeft:"50px"}}type="email" name = "email" placeholder = "Enter your Email" />
+                    <br />
+                    <input style={{marginLeft:"50px"}} type="password" name = "password" placeholder = "Enter your Password" />
+                    <br />
+                    <button style={{marginLeft:"50px"}} onClick={movetoMain}>Login</button>
+                    <br />
+                    <button style={{marginLeft: "50px"}} onClick={movetopassword}>Forgot password?</button>
+                </form>
+            </div>
         </div>
     )
 }
-
 export default LoginPage;
