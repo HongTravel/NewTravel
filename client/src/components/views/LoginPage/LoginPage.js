@@ -3,7 +3,7 @@ import './LoginPage.css';
 
 function movetoMain()
 {
-    window.location.href="/";
+    window.location.href="/study";
 }
 
 function movetopassword()
