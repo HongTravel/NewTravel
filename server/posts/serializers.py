@@ -4,14 +4,13 @@ from users.serializers import ProfileSerializer
 from .models import Post
 
 class PostSerializer(serializers.ModelSerializer):
-    #profile = ProfileSerializer(read_only=True)
+    profile = ProfileSerializer(read_only=True)
 
     class Meta:
         model = Post
-        fields = ("pk", "author", "title", "comment", "score", "likes", "written_date")
-        #profile","image", "locality1", "locality2"
+        fields = ("pk","profile","author","image","comment", "score", "likes", "written_date")
+        
 class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fiels = ("author","title", "comment", "score")
-        # "image"
+        fields = ("author", "comment", "score","image")
