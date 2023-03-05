@@ -12,7 +12,7 @@ function LandingPage(){
                     <td><KakaoMapApi  /></td>
                     <td>&nbsp; &nbsp; &nbsp;</td>
                     <td>
-                        <Card img= {sample} title="검색" text="원하는 카페, 도서관을 검색하세요" />   
+                        <Card img= {sample} title="검색" text="원하는 카페, 도서관을 지도에서 마커로 클릭하세요" />   
                     </td>
                 </tr>
              </table>

@@ -11,6 +11,7 @@ import NewPassword from "./views/NewPassword/NewPassword";
 import Navbar from "./views/Navbar/Navbar";
 import Footer from "./views/Footer/Footer";
 import LandingPage from "./views/LandingPage/LandingPage";
+import LandingDetailPage from "./views/LandingDetailPage/LandingDetailPage";
 import About from "./views/About/About";
 
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path = "/register" element = {<RegisterPage />} />
                 <Route path = "/newpass" element = {<NewPassword />} />
                 <Route path = "/study" element = {<LandingPage />} />
+                <Route path = "/study/:id" element={<LandingDetailPage />} />
             </Routes>
         </div>
       </Suspense>
