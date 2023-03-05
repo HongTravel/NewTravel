@@ -10,44 +10,54 @@ function KakaoMapApi(){
   var positions = [
     {
       title: "마포오랑",
+      content: '<div>마포오랑</div>',
       latlng: new kakao.maps.LatLng(37.55004384577977,126.91205707779953) 
     },
 
     {
       title: "서교예술실험센터",
+      content: '<div>서교예술실험센터</div>',
       latlng: new kakao.maps.LatLng(37.55248215756455,126.91995339807524)
     },
 
     {
       title: "마포평생학습관",
+      content: '<div>마포평생학습관</div>',
       latlng: new kakao.maps.LatLng(37.55435833726389,126.92312019853762)
     },
     {
       title: "캐치카페 신촌점",
+      content:'<div>캐치카페 신촌점</div>',
       latlng: new kakao.maps.LatLng(37.55633757356887,126.93631433326188)
     },
     {
       title: "티구시포 스터디카페",
+      content:'<div>티구시포 스터디카페</div>',
       latlng: new kakao.maps.LatLng(37.54993786450257,126.91497685918007) 
     },
     {
       title: "공명 홍대/연남점",
+      content: '<div>공명 홍대/연남점</div>',
       latlng: new kakao.maps.LatLng( 37.559863062403906 , 126.92535550712246) 
     },
     {
       title: "공본 스터디카페 서강대센터",
+      content: '<div>공본 스터디카페 서강대센터</div>',
       latlng: new kakao.maps.LatLng( 37.54960161382746 , 126.93612994848843)
     },
     {
       title: "브라운시티 본점",
+      content:'<div>브라운시티 본점</div>',
       latlng: new kakao.maps.LatLng(37.5526504751685,126.92378286047425 ) 
     },
     {
       title: "도화아파트먼트",
+      content:'<div>도화아파트먼트</div>',
       latlng: new kakao.maps.LatLng(37.566535427152694,126.93372039013902) 
     },
     {
       title: "채그로",
+      content:'<div>채그로</div>',
       latlng: new kakao.maps.LatLng(37.535657316466136,126.94229684545304)
     }
   ]
@@ -124,6 +134,7 @@ function KakaoMapApi(){
           displayArea(coordinates, name);
         });
 
+
       for(var i= 0; i < positions.length; i++)
       {
         var imageSize = new kakao.maps.Size(24,35);
@@ -133,10 +144,32 @@ function KakaoMapApi(){
         var marker = new kakao.maps.Marker({
             map: map,
             position: positions[i].latlng,
-            title: positions[i].title,
             image: markerImage
         })
+
+        var infowindow = new kakao.maps.InfoWindow({
+          content: positions[i].content
+        })
+
+        function makeOverListener(map,marker,infowindow){
+          return function(){
+              infowindow.open(map,marker);
+          };
+        }
+
+        function makeOutListener(infowindow){
+          return function(){
+              infowindow.close();
+          };
+        }
+
+        kakao.maps.event.addListener(marker,'mouseover',makeOverListener(map,marker,infowindow));
+        kakao.maps.event.addListener(marker,'mouseout',makeOutListener(infowindow));
+
       }
+
+     
+
 
      }, []);
 
