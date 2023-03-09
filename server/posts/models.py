@@ -4,7 +4,7 @@ from django.utils import timezone
 from users.models import Profile
 from django.contrib.postgres.fields import ArrayField
 
-
+#진현이가 최고야!!
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=True)
