@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'corsheaders',
     'posts',
+    'place',
 ]
 
 TIME_ZONE = 'Asia/Seoul'
