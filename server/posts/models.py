@@ -4,6 +4,13 @@ from django.utils import timezone
 from users.models import Profile
 from django.contrib.postgres.fields import ArrayField
 
+class Place(models.Model):
+    store_name = models.CharField(max_length=128)
+    store_address = models.CharField(max_length=128)
+    opening_time = models.TimeField(null = True)
+    closing_time = models.TimeField(null = True)
+    store_number = models.CharField(max_length=128)
+
 #진현이가 최고야!!
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
